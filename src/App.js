@@ -17,6 +17,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React OK?
+          나는 운식이라고해
         </a>
       </header>
     </div>
