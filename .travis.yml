@@ -1,4 +1,4 @@
-sudo: requried
+sudo: required
 
 language: generic
 
@@ -7,12 +7,13 @@ servies:
 
 before_install:
     - echo "start creating an image with dockerfile"
-    - docker build -t dnstlr2933/docker-react-app -f dockerfile.dev .
+    - docker build -t dnstlr2933/docker-react-app -f Dockerfile.dev .
 
 script:
     - docker run -e CI=true dnstlr2933/docker-react-app npm run test -- --coverage
 
 deploy:
+    edge: true
     provider: elasticbeanstalk
     region: "us-east-2"
     app: "docker-react-app"
